@@ -4,7 +4,7 @@
 
 <main id="comics_index">
   @foreach ($comics as $comic)
-    <a href="#">
+    <a href="{{route('comics.show', ['comic' => $comic->id])}}">
       {{$comic->series}} <br>
     </a>
   @endforeach

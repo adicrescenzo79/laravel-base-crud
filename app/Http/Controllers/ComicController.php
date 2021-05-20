@@ -49,7 +49,8 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+      $title = 'Comics Show';
+      return view('comics.show', compact('comic'))->with('title', $title);
     }
 
     /**
