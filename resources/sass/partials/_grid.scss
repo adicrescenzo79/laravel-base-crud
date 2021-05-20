@@ -1,0 +1,53 @@
+@each $breakpoint in $breakpoints{
+  @if $breakpoint == default{
+    $i: 1;
+    @while $i <= 12{
+      .col-lg-#{$i}{
+        width: calc(100% / 12 * #{$i});
+      }
+      .col-lg-offset-#{$i}{
+        margin-left: calc(100% / 12 * #{$i});
+      }
+      $i: $i + 1;
+    }
+  }  @else if $breakpoint == md {
+    @media all and (max-width: $grid-breakpoints-md){
+      $i: 1;
+      @while $i <= 12{
+        .col-#{$breakpoint}-#{$i}{
+          width: calc(100% / 12 * #{$i});
+        }
+        .col-lg-offset-#{$i}{
+          margin-left: calc(100% / 12 * #{$i});
+        }
+        $i: $i + 1;
+      }
+    }
+  }  @else if $breakpoint == sm {
+    @media all and (max-width: $grid-breakpoints-sm){
+      $i: 1;
+      @while $i <= 12{
+        .col-#{$breakpoint}-#{$i}{
+          width: calc(100% / 12 * #{$i});
+        }
+        .col-lg-offset-#{$i}{
+          margin-left: calc(100% / 12 * #{$i});
+        }
+        $i: $i + 1;
+      }
+    }
+  }  @else if $breakpoint == xs {
+    @media all and (max-width: $grid-breakpoints-xs){
+      $i: 1;
+      @while $i <= 12{
+        .col-#{$breakpoint}-#{$i}{
+          width: calc(100% / 12 * #{$i});
+        }
+        .col-lg-offset-#{$i}{
+          margin-left: calc(100% / 12 * #{$i});
+        }
+        $i: $i + 1;
+      }
+    }
+  }
+}
