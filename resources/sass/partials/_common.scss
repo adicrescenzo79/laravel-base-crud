@@ -1,3 +1,7 @@
+body{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14px;
+}
 
 .flex{
   display: flex;
@@ -15,4 +19,16 @@
 
 .txt-capitalize{
   text-transform: capitalize;
+}
+
+.mt-1{
+  margin-top: 1em;
+}
+
+.abs{
+  position: absolute;
+}
+
+.rel{
+  position: relative;
 }

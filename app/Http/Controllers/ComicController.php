@@ -27,7 +27,8 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+      $title = 'Comics Create';
+      return view('comics.create')->with('title', $title);
     }
 
     /**

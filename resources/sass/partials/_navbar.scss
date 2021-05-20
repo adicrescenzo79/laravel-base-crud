@@ -1,0 +1,79 @@
+header{
+  font-weight: bold;
+  .up{
+    background-color: #0282F9;
+    color: #fff;
+    font-size: 0.9em;
+    // @include py(3px);
+    .container{
+      justify-content: flex-end;
+
+      height: 100%;
+
+      ul{
+        height: 100%;
+        li{
+          margin-left: 80px;
+          height: 100%;
+          &:hover{
+            background-color: #5caaf2;
+          }
+        }
+      }
+    }
+  }
+  .menu{
+    font-size: 1.3em;
+    // @include py(20px);
+
+    .container{
+      justify-content: space-between;
+      align-items: center;
+      img{
+        width: 80px;
+      }
+      ul{
+        li{
+          margin: 0 15px;
+          width: calc(100% / 10) - 25px;
+          padding: 40px 0;
+          border-bottom: 4px solid #fff;
+          transition: border-bottom 0.5s;
+          &.active{
+            border-bottom: 4px solid #0282F9;
+            color: #0282F9;
+          }
+          &:hover{
+            border-bottom: 4px solid #0282F9;
+            color: #0282F9;
+
+          }
+
+          i{
+            color: #0282F9;
+            font-size: 0.7em;
+          }
+        }
+      }
+      .search{
+        border-bottom: 2px solid #0282F9;
+        width: 140px;
+        @include py(2px);
+        justify-content: flex-end;
+        input{
+          outline: none;
+          border: none;
+          width: 100px;
+          margin-right: 5px;
+          &::placeholder{
+            text-align: right;
+            color: #000;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: bold;
+            font-size: 1.3em;
+          }
+        }
+      }
+    }
+  }
+}

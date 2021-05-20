@@ -3,7 +3,12 @@
 
 
 <main id="home">
-  <a href="{{route('comics.index')}}">Comics</a>
+
+  <div class="load flex">
+    <a class="more txt-uppercase" href="{{route('comics.index')}}">Comics</a>
+
+  </div>
+
 </main>
 
 
