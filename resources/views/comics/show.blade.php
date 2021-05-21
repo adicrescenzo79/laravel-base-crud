@@ -4,6 +4,7 @@
 
   <div id="comic">
 
+
       <div class="blu"></div>
 
       <section class="trama">
@@ -94,19 +95,24 @@
       </section>
 
 
-
+{{-- v-if="cancella" --}}
 
 
       <div class="load flex">
         <a class="more txt-uppercase" href="/">torna alla home</a>
         <a class="more txt-uppercase" href="{{route('comics.index')}}">torna indietro</a>
         <a class="more txt-uppercase" href="{{route('comics.edit', ['comic' => $comic->id])}}">modifica</a>
-        <form class="" action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post">
-          @csrf
-          @method('DELETE')
-          <input type="submit" name="Modifica" value="Cancella" placeholder="">
+        <button @@click="cancella = true" class="more txt-uppercase" type="button" name="button">cancella</button>
 
-        </form>
+
+          <form  :class="(cancella) ? 'active' : ''" action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post" >
+            @csrf
+            @method('DELETE')
+            <h2 class="txt-uppercase">sicuro di voler cancellare?</h2>
+            <input @@click="cancella = false" class="more txt-uppercase" type="submit" name="Modifica" value="Cancella" placeholder="">
+            <button @@click="cancella = false" class="more txt-uppercase" type="button" name="button">annulla</button>
+          </form>
+
 
 
 

@@ -16,8 +16,10 @@
 
 
 
+    <main>
 
-    @yield('content')
+      @yield('content')
+    </main>
 
 
 
@@ -31,6 +33,8 @@
       <!-- SCOMMENTARE SE SI USA VUE -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
     <script src="/js/app.js" charset="utf-8"></script>
   </body>
 </html>
