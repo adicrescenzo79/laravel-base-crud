@@ -53,9 +53,10 @@ class ComicController extends Controller
       $comic_obj->save();
 
       //ordino la tabello al contrario e prendo il primo elemento
-      $pasta = Comic::orderBy('id', 'desc')->first();
+      $comic = Comic::orderBy('id', 'desc')->first();
 
       //questo manda allo show del nuovo elemento dopo l'inserimento
+      $title = 'Comics Show';
       return view('comics.show', compact('comic'))->with('title', $title);
     }
 
@@ -79,7 +80,9 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+      $title = 'Comics Edit';
+      return view('comics.edit', compact('comic'))->with('title', $title);
+
     }
 
     /**
@@ -91,7 +94,10 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+      $data = $request->all();
+      $comic->update($data);
+
+      return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
@@ -102,6 +108,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+      $comic->delete();
+
+      return redirect()->route('comics.index');
     }
 }

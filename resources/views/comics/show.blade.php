@@ -100,6 +100,15 @@
       <div class="load flex">
         <a class="more txt-uppercase" href="/">torna alla home</a>
         <a class="more txt-uppercase" href="{{route('comics.index')}}">torna indietro</a>
+        <a class="more txt-uppercase" href="{{route('comics.edit', ['comic' => $comic->id])}}">modifica</a>
+        <form class="" action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post">
+          @csrf
+          @method('DELETE')
+          <input type="submit" name="Modifica" value="Cancella" placeholder="">
+
+        </form>
+
+
 
       </div>
   </div>

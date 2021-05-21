@@ -5,10 +5,10 @@
 <div id="comics_create">
   <div class="container">
     <form class="" action="{{route('comics.store')}}" method="post">
+      {{-- inserisce il token che valida l'inserimento --}}
       @csrf
       @method('POST')
-      {{-- <input type="hidden" name="" value="">
-      <input type="hidden" name="" value=""> --}}
+
       <input type="text" name="title" value="" placeholder="title">
       <input type="text" name="description" value="" placeholder="description">
       <input type="text" name="thumb" value="" placeholder="thumb">
