@@ -79,7 +79,7 @@
                 </div>
                 <div class="flex riga">
                   <span class="title">U.S. Price:</span>
-                  <span>{{$comic['price']}}</span>
+                  <span>{{number_format($comic['price'], 2, ' $ ', '')}}</span>
                 </div>
                 <div class="flex riga doppia">
                   <span class="title">On Sale Date:</span>

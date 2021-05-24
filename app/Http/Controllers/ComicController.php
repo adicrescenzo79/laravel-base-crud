@@ -39,6 +39,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate([
+        'title' => 'required|unique:comics|string|max:50',
+        'description' => 'required|unique:comics|string',
+        'thumb' => 'Nullable|string',
+        'price' => 'required|numeric',
+        'series' => 'required|string|max:100',
+        'sale_date' => 'required|date',
+        'type' => 'required|string|max:20',
+      ]);
+
       $comic = $request->all(); //raccolgo i dati inseriti
 
       // li accoppio e faccio un seed
@@ -46,7 +56,7 @@ class ComicController extends Controller
       $comic_obj->title = $comic['title'];
       $comic_obj->description = $comic['description'];
       $comic_obj->thumb = $comic['thumb'];
-      $comic_obj->price = substr($comic['price'], 1);
+      $comic_obj->price = $comic['price'];
       $comic_obj->series = $comic['series'];
       $comic_obj->sale_date = $comic['sale_date'];
       $comic_obj->type = $comic['type'];
@@ -94,6 +104,16 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+      $request->validate([
+        'title' => 'required|string|max:50',
+        'description' => 'required|string',
+        'thumb' => 'Nullable|string',
+        'price' => 'required|numeric',
+        'series' => 'required|string|max:100',
+        'sale_date' => 'required|date',
+        'type' => 'required|string|max:20',
+      ]);
+
       $data = $request->all();
       $comic->update($data);
 
